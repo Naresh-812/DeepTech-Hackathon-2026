@@ -1,0 +1,14 @@
+              precision    recall  f1-score   support
+
+     scratch     0.7176    0.8133    0.7625        75
+  block_etch     0.7538    0.6533    0.7000        75
+    particle     0.8246    0.6267    0.7121        75
+ coating_bad     0.5455    0.5714    0.5581        63
+piq_particle     0.7759    0.7627    0.7692        59
+   sez_burnt     0.8500    0.9444    0.8947        18
+       clean     0.8256    0.9467    0.8820        75
+       other     0.7051    0.7333    0.7190        75
+
+    accuracy                         0.7398       515
+   macro avg     0.7498    0.7565    0.7497       515
+weighted avg     0.7426    0.7398    0.7375       515
