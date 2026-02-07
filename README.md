@@ -205,33 +205,10 @@ nxp_eiq_deploy.py  →  C header + eIQ config + deployment guide
 
 ---
 
-## 10. Reproducibility
 
-All code, configs, and scripts are in the repository.
-```bash
-pip install -r requirements.txt
 
-# Dataset pipeline
-python src/dataset/convert_objdet_to_classification.py
-python src/dataset/generate_clean_other.py
-python src/dataset/build_final_dataset.py
 
-# Training (on Colab/Kaggle)
-python notebooks/train_colab.py
-
-# NXP eIQ deployment artifacts
-python src/export/nxp_eiq_deploy.py
-
-# Inference
-python src/inference/inference_tflite.py --model outputs/exports/model_int8_ptq.tflite --image path/to/image.png
-
-# Streamlit demo
-streamlit run src/inference/demo_app.py
-```
-
----
-
-## 11. Challenges & Learnings
+## 10. Challenges & Learnings
 
 1. **Clean vs Other confusion** — Initial models confused these classes heavily. Solved by engineering quantifiable texture separation (Laplacian variance, pixel std thresholds)
 2. **Model size constraint** — MobileNetV2 alpha=1.0 produced 3MB INT8 models. Switching to alpha=0.35 reduced to 614.7 KB with negligible accuracy loss
